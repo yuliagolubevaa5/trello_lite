@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Trello</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar-start">
+            <a href="#"><span><i class="fa fa-home"></i></span></a>
+            <a href="#"><span><i class="fa fa-trello"></i>
+                    <p>Доски</p>
+                </span></a>
+            <span id="search"><input type="search"><label for="#search"><i class="fa fa-search"></i></label></span>
+            <a href=""><img src="img/logdog.png" alt=""></a>
+        </div>
+        <div class="logo"></div>
+        <div class="navbar-end">
+            <a href="#"><span id="plus"><i class="fa fa-plus-square"></i></span></a>
+            <a href="#"><span id="info"><i class="fa fa-info-circle"></i></span></a>
+            <a href="#"><span id="bell"><i class="fa fa-bell"></i></span></a>
+            <a href="#"><span id="user">
+                    <p>II</p>
+                </span></a>
+        </div>
+    </header>
+    <div class="function-header">
+        <div class="functions-start">
+            <input type="text" placeholder="" class="board-editor" value="Вёрстка">
+            <div class="input"></div>
+            <a href="#"><span id="star"><i class="fa fa-star fa-1x"></i></span></a>
+            <a href="#"><span id="personal">
+                    <p>Персональная</p>
+                </span></a>
+            <a href="#"><span id=""><i class="fa fa-lock fa-1x"></i>
+                    <p>Приватная</p>
+                </span></a>
+            <a href="#"><span id="user">
+                    <p>II</p>
+                </span></a>
+            <a href="#"><span id="invite">
+                    <p>Пригласить</p>
+                </span></a>
+        </div>
+        <div class="functions-end">
+            <a href="#"><span id="cons-bell"><i class="fa fa-bell"></i>
+                    <p>Buttler</p>
+                </span></a>
+            <a href="#" id="menu"><span><i class="fa fa-ellipsis-h"></i>
+                    <p>Меню</p>
+                </span></a>
+            <ul class="dropdown">
+                <li><a href="">О доске</a></li>
+                <li><a href="">Сменить фон</a></li>
+                <li><a href="">Стикеры</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-board">
+        <div class="cards">
+            <div class="card-bg">
+                <button class="add-column hide">Добавьте колонку</button>
+                <div class="card">
+                    <div class="card-title">
+                        <span class="title"><input type="text" class="title" placeholder="Введите заголовок" value="Список дел">
+                            <button id="settings" class="dot"><i class="fa fa-ellipsis-h"></i></button>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <input type="text" placeholder="Ввести заголовок для новой карточки" class="card-text" />
+                        <button class="add">Добавить карточку</button>
+                        <ul class="myList">
+                        </ul>
+                    </div>
+                </div>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close">×</span>
+                            <h3>Действия со списком</h3>
+                        </div>
+                        <div class="modal-body">
+                            <ul class="modal-body-ul">
+                                <li><a href="">Добавить карточку...</a></li>
+                                <li><a href="">Копировать список...</a></li>
+                                <li><a href="">Переместить список...</a></li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <ul class="modal-body-ul">
+                                <li><a href="">Сортировать по...</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="card-bg">
+                <button class="add-column hide">Добавьте ещё одну колонку</button>
+                <div class="card">
+                    <div class="card-title">
+                        <span class="title"><input type="text" class="title" placeholder="Введите заголовок" value="В процессе">
+                            <button id="settings" class="dot"><i class="fa fa-ellipsis-h"></i></button>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <input type="text" placeholder="Ввести заголовок для новой карточки" class="card-text" />
+                        <button class="add">Добавить карточку</button>
+                        <ul class="myList">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-bg">
+                <button class="add-column hide">Добавьте ещё одну колонку</button>
+                <div class="card">
+                    <div class="card-title">
+                        <span class="title"><input type="text" class="title" placeholder="Введите заголовок" value="Готово">
+                            <button id="settings" class="dot"><i class="fa fa-ellipsis-h"></i></button>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <input type="text" placeholder="Ввести заголовок для новой карточки" class="card-text" />
+                        <button class="add">Добавить карточку</button>
+                        <ul class="myList">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-bg">
+                <button class="add-column">Добавьте ещё одну колонку</button>
+                <div class="card hide">
+                    <div class="card-title">
+                        <span class="title"><input type="text" class="title" placeholder="Введите заголовок" value="">
+                            <button id="settings" class="dot"><i class="fa fa-ellipsis-h"></i></button>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <input type="text" placeholder="Ввести заголовок для новой карточки" class="card-text" />
+                        <button class="add">Добавить карточку</button>
+                        <ul class="myList">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-bg">
+                <button class="add-column">Добавьте ещё одну колонку</button>
+                <div class="card hide">
+                    <div class="card-title">
+                        <span class="title"><input type="text" class="title" placeholder="Введите заголовок" value="">
+                            <button id="settings" class="dot"><i class="fa fa-ellipsis-h"></i></button>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <input type="text" placeholder="Ввести заголовок для новой карточки" class="card-text" />
+                        <button class="add">Добавить карточку</button>
+                        <ul class="myList">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        DragManager.onDragCancel = function(dragObject) {
+            dragObject.avatar.rollback();
+        };
+
+        DragManager.onDragEnd = function(dragObject, dropElem) {
+            dragObject.elem.style.display = 'none';
+        };
+
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="common.js"></script>
+</body>
+
+</html>
