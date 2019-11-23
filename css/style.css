@@ -62,12 +62,30 @@ span {
     padding-left: 5px;
 }
 
-span i {
+._btn {
+    border: 0;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    border-radius: 3px;
+    margin-left: 4px;
+    margin-right: 4px;
+    height: 32px;
+    font-weight: bold;
+    padding-right: 5px;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+i {
     padding: 5px;
     cursor: pointer;
 }
 
-#user {
+._user {
+    cursor: pointer;
+    border: 0;
     padding: 0;
     height: 32px;
     width: 32px;
@@ -111,8 +129,9 @@ header .navbar-end {
     height: 32px;
 }
 
+.navbar-start button:hover,
 .navbar-start span:hover,
-.navbar-end span:hover {
+.navbar-end button:hover {
     background: rgba(255, 255, 255, 0.2);
 }
 
@@ -124,21 +143,16 @@ header .navbar-end {
     position: relative;
 }
 
-.functions-start span:hover,
-.functions-end span:hover,
-.card-description:hover,
-.add-column:hover {
+.functions-start button:hover,
+.functions-end button:hover,
+.card__description:hover,
+.card-bg__add:hover {
     background: rgba(255, 255, 255, 0.6);
 }
 
 
 .functions-start {
     display: flex;
-}
-
-.functions-start a {
-    border-left: solid 1px white;
-
 }
 
 .functions-end {
@@ -150,7 +164,7 @@ header .navbar-end {
     align-self: center;
 }
 
-.board-editor {
+.function-header__input {
     cursor: pointer;
     border-radius: 3px;
     font-size: 18px;
@@ -161,23 +175,16 @@ header .navbar-end {
     min-width: 100px;
 }
 
-.input,
-.board-editor {
+functions-start__input,
+.function-header__input {
     font-family: Arial, Verdana, sans-serif;
     letter-spacing: 0.05em;
 }
 
-.input {
-    position: absolute;
-    top: -1000px;
-    left: -1000px;
-    visibility: hidden;
-    white-space: nowrap;
-}
-
-main{
+main {
     margin-top: 5px;
 }
+
 .cards {
     display: flex;
     flex-direction: row;
@@ -185,7 +192,7 @@ main{
     flex-wrap: nowrap;
 }
 
-.cards-bg{
+.cards-bg {
     display: flex;
     flex-direction: column;
 }
@@ -207,16 +214,15 @@ ul {
     display: none;
 }
 
-.card-title {
+.card__card-title {
     cursor: pointer;
     padding: 5px;
 }
 
-.title {
+.card__title {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-between;
     color: #172b4d;
     font-size: 16px;
     font-weight: bold;
@@ -227,26 +233,27 @@ ul {
     color: grey;
 }
 
-.card-description {
+.card__description {
     background-color: #fff;
     border-bottom: solid 1px grey;
     border-radius: 3px;
     cursor: pointer;
     padding: 7px;
     color: #172b4d;
+    height: 30px;
 }
 
-.card-body {
+.card__body {
     overflow: auto;
     max-height: 600px;
 }
 
-.card-body ul {
+.card__body ul {
     margin-top: 12px;
     padding: 0;
 }
 
-.card-text {
+.card__text {
     padding: 0;
     margin: 5px;
     height: 32px;
@@ -258,9 +265,9 @@ ul {
 }
 
 .add {
+    display: block;
     background-color: limegreen;
     color: white;
-    padding: 7px;
     border: solid 1px limegreen;
     border-radius: 3px;
     cursor: pointer;
@@ -270,21 +277,24 @@ ul {
 .add:hover {
     background: #5aac44;
 }
-.edit{
-    cursor: pointer;
+
+.edit {
     float: right;
+    cursor: pointer;
     color: grey;
     background: white;
     border: none;
     border-radius: 3px;
 }
+
 .del {
-    cursor: pointer;
     float: right;
+    cursor: pointer;
     color: grey;
     background: white;
     border: none;
     border-radius: 3px;
+
 }
 
 .del:hover,
@@ -296,9 +306,10 @@ ul {
 .card-bg {
     display: flex;
     justify-content: center;
+    flex-grow: 1;
 }
 
-.add-column {
+.card-bg__add {
     background: rgba(255, 255, 255, 0.3);
     color: white;
     border-radius: 3px;
@@ -312,12 +323,13 @@ ul {
     border: 0;
 }
 
-.dot{
+.dot {
     border: 0;
-    border-radius: 3px;   
+    border-radius: 3px;
     background: rgba(255, 255, 255, 0.3);
 }
-.dot:hover{
+
+.dot:hover {
     background: lightgray;
 }
 
@@ -338,7 +350,7 @@ ul {
     margin: auto;
     padding: 0;
     width: 20%;
-    
+
 }
 
 .close {
@@ -355,10 +367,12 @@ ul {
     text-decoration: none;
     cursor: pointer;
 }
-.modal-content{
+
+.modal-content {
     background-color: white;
     border-radius: 3px;
 }
+
 .modal-header {
     padding: 2px 16px;
     color: #172b4d;
@@ -368,26 +382,37 @@ ul {
 .modal-body {
     color: black;
     padding: 2px 16px;
-    border-bottom: solid 1px grey;  
+    border-bottom: solid 1px grey;
 }
-.modal-body-ul{
+
+.modal-body__ul {
     margin: 0;
     padding: 0;
 }
-.modal-body-ul li{
-    padding: 10px 0 ;
+
+.modal-body__ul li {
+    padding: 10px 0;
 }
-.modal-body-ul li:hover{
+
+.modal-body__ul li:hover {
     background: rgba(255, 255, 255, 0.3);
 }
-.modal-body-ul a{
+
+.modal-body__ul a {
     color: black;
 }
+
 .modal-footer {
     padding: 2px 16px;
     color: white;
 }
-.dropdown{
+
+.functions-start__input {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.functions-end__ul_dropdown {
     display: none;
     z-index: 100;
     background-color: white;

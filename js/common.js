@@ -4,13 +4,14 @@
 
 $(function () {
     $('.add').on("click", function () {
-        var val = $(this).parent().find('.card-text').val();
+        var val = $(this).parent().find('.card__text').val();
         if (val != '') {
-            var li = $('<li class="card-description"></li>').text(val); 
+            var li = $('<li class="card__description"></li>');
+            $(li).append('<div class="card__text-value"></div>').text(val);
             $(li).append('<button class="del"><i class="fa fa-close"></i></button>');
             $(li).append('<button class="edit"><i class="fa fa-pencil"></i></button>');
-            $(this).parent().find('.myList').append(li);
-            $(this).parent().find('.card-text').val('');
+            $(this).parent().find('.card__ul').append(li);
+            $(this).parent().find('.card__text').val('');
             $(this).parent().find('.del').on('click', function () {
                 $(this).parent().remove();
             });
@@ -23,7 +24,7 @@ $(function () {
 
 //Добавление нового столбца
 $(function () {
-    $('.add-column').on("click", function () {
+    $('.card-bg__add').on("click", function () {
         $(this).parent().find('.card').removeClass('hide');
         $(this).remove();
 
@@ -48,4 +49,3 @@ window.onclick = function (event) {
     }
 }
 //Выпадающее меню
-
